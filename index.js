@@ -134,7 +134,7 @@ function displayReminders() {
             });
     }
         // Sample reminder data (name and description)
-        const reminders1 = [
+        const reminders = [
             { name: "Meeting with Client", description: "Discuss project progress with the client." },
             { name: "Pay Bills", description: "Pay electricity, water, and internet bills." },
             { name: "Grocery Shopping", description: "Buy groceries for the week." },

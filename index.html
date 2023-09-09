@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <title>Reminder App</title>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Reminder App</h1>
+        </header>
+        <main>
+            <!-- Login Page -->
+            <div id="login-page">
+                <input type="text" id="username" placeholder="Username"><br><br>
+                <input type="password" id="password" placeholder="Password"><br><br>
+                <button onclick="login()">Login</button>
+                <button type="button" onclick="window.location.href=''">Cancel</button>
+                <p id="login-error" class="error-message"></p>
+            </div>
+
+            <!-- Home Page -->
+            <div id="home-page" style="display: none;">
+                <p>Hello, <span id="username"></span>!</p>
+                <h2>Welcome to the Reminder App</h2>
+                <h1 id="dateMessage">Today's Date</h1>
+                <button onclick="showSetReminder()">Set Reminder</button>
+                <button onclick="showModifyReminder()">Modify Reminders</button>
+                <button onclick="showDisableReminder()">Disable Reminders</button>
+                <button onclick="showDeleteReminder()">Delete Reminders</button>
+                <button onclick="showEnableReminder()">Enable Reminders</button>
+                <button onclick="showViewReminder()">View Reminders</button>
+                <button onclick="window.location.href=''">Back</button>
+                <button onclick="logout()">Logout</button>
+            </div>
+
+            <!-- Set Reminder Page -->
+            <div id="set-reminder-page" style="display: none;">
+                <h2>Set Reminder</h2>
+                <label for="subject">Select a Date:</label>
+                <input type="date">
+                <br>
+                <label for="subject">Select a Subject:</label>
+                <select id="subject" name="subject">
+                    <option value="math">Mathematics</option>
+                    <option value="science">Science</option>
+                    <option value="history">History</option>
+                    <option value="english">English</option>
+                    <option value="programming">Programming</option>
+                </select>
+                <br>
+                <label for="comments">Add discription:</label>
+                <textarea id="comments" name="comments" rows="4" cols="50"></textarea>
+                <br>
+                <label for="comments">:</label>
+                <label for="username">Email Address:</label>
+                <input type="text" id="Email" name="Email">
+                <br>
+                <label for="username">contact No:</label>
+                <input type="text" id="contact" name="Contact">
+                 <br>
+                 <label for="comments">Recur of next:</label>
+                 <label for="7days">7 days:</label>
+                 <input type="checkbox" id="7days" name="duration" value="7">
+                 <br>
+             
+                 <label for="5days">5 days:</label>
+                 <input type="checkbox" id="5days" name="duration" value="5">
+                 <br>
+             
+                 <label for="3days">3 days:</label>
+                 <input type="checkbox" id="3days" name="duration" value="3">
+                 <br>
+             
+                 <label for="2days">2 days:</label>
+                 <input type="checkbox" id="2days" name="duration" value="2">
+                 <br>
+                <button onclick="addReminder()">Confirm</button>
+                <button onclick="hideSetReminder()">Back</button>
+                <button onclick="logout()">Logout</button>
+            </div>
+              <!-- Modify Reminder Page -->
+            <div id="Modify-reminder-page" style="display: none;">
+                <h2>Modify Reminder</h2>
+                <label for="subject">Select a Date:</label>
+                <input type="date">
+                <br>
+                <label for="subject">Select a Subject:</label>
+                <select id="subject" name="subject">
+                    <option value="math">Mathematics</option>
+                    <option value="science">Science</option>
+                    <option value="history">History</option>
+                    <option value="english">English</option>
+                    <option value="programming">Programming</option>
+                </select>
+                <br>
+                <label for="subject">remainder:</label>
+    <select id="reminderDropdown">
+        <!-- Placeholder option -->
+        <option value="" disabled selected>Select a Reminder</option>
+    </select>
+
+    <div id="descriptionDisplay">
+        <h3>Description:</h3>
+        <p id="descriptionText"></p>
+    </div>       
+                <br>
+                <label for="comments">Add discription:</label>
+                <textarea id="comments" name="comments" rows="4" cols="50"></textarea>
+                <br>
+                <label for="comments">:</label>
+                <label for="username">Email Address:</label>
+                <input type="text" id="Email" name="Email">
+                <br>
+                <label for="username">contact No:</label>
+                <input type="text" id="contact" name="Contact">
+                 <br>
+                 <label for="comments">Recur of next:</label>
+                 <label for="7days">7 days:</label>
+                 <input type="checkbox" id="7days" name="duration" value="7">
+                 <br>
+             
+                 <label for="5days">5 days:</label>
+                 <input type="checkbox" id="5days" name="duration" value="5">
+                 <br>
+             
+                 <label for="3days">3 days:</label>
+                 <input type="checkbox" id="3days" name="duration" value="3">
+                 <br>
+             
+                 <label for="2days">2 days:</label>
+                 <input type="checkbox" id="2days" name="duration" value="2">
+                 <br>
+                <button onclick="addReminder()">Confirm</button>
+                <button onclick="hideModifyReminder()">Back</button>
+                <button onclick="logout()">Logout</button>
+            </div>
+              <!-- Disable Reminder Page -->
+              <div id="Disable-reminder-page" style="display: none;">
+                <h2>Disable Reminder</h2>
+                <label for="subject">Select a Date:</label>
+                <input type="date">
+                <br>
+                <label for="subject">Select a Subject:</label>
+                <select id="subject" name="subject">
+                    <option value="math">Mathematics</option>
+                    <option value="science">Science</option>
+                    <option value="history">History</option>
+                    <option value="english">English</option>
+                    <option value="programming">Programming</option>
+                </select>
+                <br>
+                <label for="subject">remainder:</label>
+                <select id="reminderDropdown">
+                    <!-- Placeholder option -->
+                    <option value="" disabled selected>Select a Reminder</option>
+                </select>
+            
+                <div id="descriptionDisplay">
+                    <h3>Description:</h3>
+                    <p id="descriptionText"></p>
+                </div> 
+                <br>
+                <label for="comments">Add discription:</label>
+                <textarea id="description" readonly rows="6" cols="50">
+
+                </textarea>
+                <br>
+                <button onclick="addReminder()">Confirm</button>
+                <button onclick="hideDisableReminder()">Back</button>
+                <button onclick="logout()">Logout</button>
+            </div>
+ <!-- Delete Reminder Page -->
+ <div id="Delete-reminder-page" style="display: none;">
+    <h2>Delete Reminder</h2>
+    <label for="subject">Select a Date:</label>
+    <input type="date">
+    <br>
+    <label for="subject">Select a Subject:</label>
+    <select id="subject" name="subject">
+        <option value="math">Mathematics</option>
+        <option value="science">Science</option>
+        <option value="history">History</option>
+        <option value="english">English</option>
+        <option value="programming">Programming</option>
+    </select>
+    <br>
+    <label for="subject">remainder:</label>
+    <select id="reminderDropdown">
+        <!-- Placeholder option -->
+        <option value="" disabled selected>Select a Reminder</option>
+    </select>
+
+    <div id="descriptionDisplay">
+        <h3>Description:</h3>
+        <p id="descriptionText"></p>
+    </div> 
+    <br>
+    <label for="comments">Add discription:</label>
+    <textarea id="description" readonly rows="6" cols="50">
+
+    </textarea>
+    <br>
+    <button onclick="addReminder()">Confirm</button>
+    <button onclick="hideDeleteReminder()">Back</button>
+    <button onclick="logout()">Logout</button>
+</div>
+ <!-- Enable Reminder Page -->
+ <div id="Enable-reminder-page" style="display: none;">
+    <h2>Enable Reminder</h2>
+    <label for="subject">Select a Date:</label>
+    <input type="date">
+    <br>
+    <label for="subject">Select a Subject:</label>
+    <select id="subject" name="subject">
+        <option value="math">Mathematics</option>
+        <option value="science">Science</option>
+        <option value="history">History</option>
+        <option value="english">English</option>
+        <option value="programming">Programming</option>
+    </select>
+    <br>
+    <label for="subject">remainder:</label>
+<select id="reminderDropdown">
+<!-- Placeholder option -->
+<option value="" disabled selected>Select a Reminder</option>
+</select>
+
+<div id="descriptionDisplay">
+<h3>Description:</h3>
+<p id="descriptionText"></p>
+</div>       
+    <br>
+    <label for="comments">Add discription:</label>
+    <textarea id="comments" name="comments" rows="4" cols="50"></textarea>
+    <br>
+    <label for="comments">:</label>
+    <label for="username">Email Address:</label>
+    <input type="text" id="Email" name="Email">
+    <br>
+    <label for="username">contact No:</label>
+    <input type="text" id="contact" name="Contact">
+     <br>
+     <label for="comments">Recur of next:</label>
+     <label for="7days">7 days:</label>
+     <input type="checkbox" id="7days" name="duration" value="7">
+     <br>
+ 
+     <label for="5days">5 days:</label>
+     <input type="checkbox" id="5days" name="duration" value="5">
+     <br>
+ 
+     <label for="3days">3 days:</label>
+     <input type="checkbox" id="3days" name="duration" value="3">
+     <br>
+ 
+     <label for="2days">2 days:</label>
+     <input type="checkbox" id="2days" name="duration" value="2">
+     <br>
+    <button onclick="addReminder()">Confirm</button>
+    <button onclick="hideEnableReminder()">Back</button>
+    <button onclick="logout()">Logout</button>
+</div>
+ <!-- View Reminder Page -->
+ <div id="View-reminder-page" style="display: none;">
+    <h2>View Reminder</h2>
+    <label for="subject">Select a Date:</label>
+    <input type="date">
+    <br>
+    <label for="subject">Select a Subject:</label>
+    <select id="subject" name="subject">
+        <option value="math">Mathematics</option>
+        <option value="science">Science</option>
+        <option value="history">History</option>
+        <option value="english">English</option>
+        <option value="programming">Programming</option>
+    </select>
+    <br>
+    <label for="subject">remainder:</label>
+<select id="reminderDropdown">
+<!-- Placeholder option -->
+<option value="" disabled selected>Select a Reminder</option>
+</select>
+
+<div id="descriptionDisplay">
+<h3>Description:</h3>
+<p id="descriptionText"></p>
+</div>       
+    <br>
+    <label for="comments">Add discription:</label>
+    <textarea id="comments" name="comments" rows="4" cols="50"></textarea>
+    <br>
+    <label for="comments">:</label>
+    <label for="username">Email Address:</label>
+    <input type="text" id="Email" name="Email">
+    <br>
+    <label for="username">contact No:</label>
+    <input type="text" id="contact" name="Contact">
+     <br>
+     <label for="comments">Recur of next:</label>
+     <label for="7days">7 days:</label>
+     <input type="checkbox" id="7days" name="duration" value="7">
+     <br>
+ 
+     <label for="5days">5 days:</label>
+     <input type="checkbox" id="5days" name="duration" value="5">
+     <br>
+ 
+     <label for="3days">3 days:</label>
+     <input type="checkbox" id="3days" name="duration" value="3">
+     <br>
+ 
+     <label for="2days">2 days:</label>
+     <input type="checkbox" id="2days" name="duration" value="2">
+     <br>
+    <button onclick="addReminder()">Confirm</button>
+    <button onclick="hideViewReminder()">Back</button>
+    <button onclick="logout()">Logout</button>
+</div>
+    <script src="index.js"></script>
+</body>
+</html>

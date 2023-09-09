@@ -1,0 +1,39 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color:cornsilk;
+}
+
+header {
+    text-align: center;
+}
+
+h1 {
+    font-size: 24px;
+}
+
+.error-message {
+    color: red;
+}
+
+button {
+    margin: 10px;
+}
+
+#login-page,
+#home-page,
+#set-reminder-page,
+#view-reminder-page {
+    text-align: center;
+}
+#dateMessage {
+    font-size: 24px;
+    color: #333;
+}

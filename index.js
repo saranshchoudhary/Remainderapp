@@ -72,13 +72,13 @@ function hideEnableReminder() {
     document.getElementById("Enable-reminder-page").style.display = "none";
     document.getElementById("home-page").style.display = "block";
 }
-function showviewReminder() {
+function showViewReminder() {
     document.getElementById("home-page").style.display = "none";
-    document.getElementById("View-reminder-page").style.display = "block";
+    document.getElementById("View-Reminder-page").style.display = "block";
     displayReminders();
 }
 function hideViewReminder() {
-    document.getElementById("View-reminder-page").style.display = "none";
+    document.getElementById("View-Reminder-page").style.display = "none";
     document.getElementById("home-page").style.display = "block";
 }
 

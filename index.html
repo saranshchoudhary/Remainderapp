@@ -44,11 +44,11 @@
                 <br>
                 <label for="subject">Select a Subject:</label>
                 <select id="subject" name="subject">
-                    <option value="math">Mathematics</option>
-                    <option value="science">Science</option>
-                    <option value="history">History</option>
-                    <option value="english">English</option>
-                    <option value="programming">Programming</option>
+                    <option value="math">subject1</option>
+                    <option value="science">subject2</option>
+                    <option value="history">subject3</option>
+                    <option value="english">subject4</option>
+                    <option value="programming">subject5</option>
                 </select>
                 <br>
                 <label for="comments">Add discription:</label>
@@ -89,11 +89,11 @@
                 <br>
                 <label for="subject">Select a Subject:</label>
                 <select id="subject" name="subject">
-                    <option value="math">Mathematics</option>
-                    <option value="science">Science</option>
-                    <option value="history">History</option>
-                    <option value="english">English</option>
-                    <option value="programming">Programming</option>
+                    <option value="math">subject1</option>
+                    <option value="science">subject2</option>
+                    <option value="history">subject3</option>
+                    <option value="english">subject4</option>
+                    <option value="programming">subject5</option>
                 </select>
                 <br>
                 <label for="subject">remainder:</label>
@@ -145,11 +145,11 @@
                 <br>
                 <label for="subject">Select a Subject:</label>
                 <select id="subject" name="subject">
-                    <option value="math">Mathematics</option>
-                    <option value="science">Science</option>
-                    <option value="history">History</option>
-                    <option value="english">English</option>
-                    <option value="programming">Programming</option>
+                    <option value="math">subjetc1</option>
+                    <option value="science">subject2</option>
+                    <option value="history">subject3</option>
+                    <option value="english">subject4</option>
+                    <option value="programming">subject5</option>
                 </select>
                 <br>
                 <label for="subject">remainder:</label>
@@ -180,11 +180,11 @@
     <br>
     <label for="subject">Select a Subject:</label>
     <select id="subject" name="subject">
-        <option value="math">Mathematics</option>
-        <option value="science">Science</option>
-        <option value="history">History</option>
-        <option value="english">English</option>
-        <option value="programming">Programming</option>
+        <option value="math">subject1</option>
+        <option value="science">subject2</option>
+        <option value="history">subject3</option>
+        <option value="english">subject4</option>
+        <option value="programming">subject5</option>
     </select>
     <br>
     <label for="subject">remainder:</label>
@@ -215,11 +215,11 @@
     <br>
     <label for="subject">Select a Subject:</label>
     <select id="subject" name="subject">
-        <option value="math">Mathematics</option>
-        <option value="science">Science</option>
-        <option value="history">History</option>
-        <option value="english">English</option>
-        <option value="programming">Programming</option>
+        <option value="math">subject1</option>
+        <option value="science">subject2</option>
+        <option value="history">subject3</option>
+        <option value="english">subject4</option>
+        <option value="programming">subject5</option>
     </select>
     <br>
     <label for="subject">remainder:</label>
@@ -266,16 +266,19 @@
  <!-- View Reminder Page -->
  <div id="View-reminder-page" style="display: none;">
     <h2>View Reminder</h2>
-    <label for="subject">Select a Date:</label>
+    <label for="subject">Select From Date:</label>
     <input type="date">
     <br>
+      <label for="subject">Select to Date:</label>
+    <input type="date">
+     <br>
     <label for="subject">Select a Subject:</label>
     <select id="subject" name="subject">
-        <option value="math">Mathematics</option>
-        <option value="science">Science</option>
-        <option value="history">History</option>
-        <option value="english">English</option>
-        <option value="programming">Programming</option>
+        <option value="math">subject1</option>
+        <option value="science">subject2</option>
+        <option value="history">subject3</option>
+        <option value="english">subject4</option>
+        <option value="programming">subject5</option>
     </select>
     <br>
     <label for="subject">remainder:</label>
@@ -299,21 +302,17 @@
     <label for="username">contact No:</label>
     <input type="text" id="contact" name="Contact">
      <br>
-     <label for="comments">Recur of next:</label>
-     <label for="7days">7 days:</label>
-     <input type="checkbox" id="7days" name="duration" value="7">
-     <br>
- 
-     <label for="5days">5 days:</label>
-     <input type="checkbox" id="5days" name="duration" value="5">
-     <br>
- 
-     <label for="3days">3 days:</label>
-     <input type="checkbox" id="3days" name="duration" value="3">
-     <br>
- 
-     <label for="2days">2 days:</label>
-     <input type="checkbox" id="2days" name="duration" value="2">
+        <div class="reminder-status status-pending"></div>
+    <span class="status-text">Pending</span>
+
+    <div class="reminder-status status-completed"></div>
+    <span class="status-text">Completed</span>
+
+    <div class="reminder-status status-overdue"></div>
+    <span class="status-text">Overdue</span>
+    <br>
+     <label for="recurrence-frequency">Recurrence Frequency:</label>
+<input type="number" id="recurrence-frequency" name="recurrence-frequency" min="1" max="365" step="1" value="1">
      <br>
     <button onclick="addReminder()">Confirm</button>
     <button onclick="hideViewReminder()">Back</button>

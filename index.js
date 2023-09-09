@@ -133,41 +133,7 @@ function displayReminders() {
                 return response.json(); // Assuming the response is in JSON format
             });
     }
-        // Sample reminder data (name and description)
-        const reminders1 = [
-            { name: "Meeting with Client", description: "Discuss project progress with the client." },
-            { name: "Pay Bills", description: "Pay electricity, water, and internet bills." },
-            { name: "Grocery Shopping", description: "Buy groceries for the week." },
-            { name: "Doctor's Appointment", description: "Visit the dentist for a checkup." },
-            { name: "Project Deadline", description: "Complete the project report by Friday." }
-        ];
-
-        // Function to populate the dropdown with reminders and display description
-        function populateDropdown() {
-            const dropdown = document.getElementById("reminderDropdown");
-            const descriptionText = document.getElementById("descriptionText");
-
-            // Loop through the reminders and create an option element for each
-            for (const reminder of reminders) {
-                const option = document.createElement("option");
-                option.value = reminder.name;
-                option.textContent = `${reminder.name} - ${reminder.description.substring(0, 30)}...`;
-                dropdown.appendChild(option);
-
-                // Add a data attribute to store the full description
-                option.dataset.description = reminder.description;
-            }
-
-            // Event listener to update the displayed description when an option is selected
-            dropdown.addEventListener("change", function () {
-                const selectedOption = dropdown.options[dropdown.selectedIndex];
-                const selectedDescription = selectedOption.dataset.description;
-                descriptionText.textContent = selectedDescription;
-            });
-        }
-
-        // Call the populateDropdown function to fill the dropdown with reminders
-        populateDropdown();
+        
 
 
         

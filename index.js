@@ -8,7 +8,7 @@ function login() {
     const password = document.getElementById("password").value;
     
     // Replace "your_username" and "your_password" with actual credentials
-    if (username === "" && password === "") {
+    if (username === "saransh" && password === "12345") {
         isLoggedIn = true;
         loggedInUsername = username; // Store the logged-in username
         document.getElementById("login-error").textContent = "";
